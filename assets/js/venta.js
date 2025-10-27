@@ -70,19 +70,38 @@ for (let propiedadVenta of propiedadesVenta) {
                   ${propiedadVenta.descripcion}
                 </p>
                 <p>
-                  <i class="fas fa-map-marker-alt"></i> ${propiedadVenta.ubicacion}
+                  <i class="fas fa-map-marker-alt"></i> ${
+                    propiedadVenta.ubicacion
+                  }
                 </p>
                 <p>
-                  <i class="fas fa-bed"></i> ${propiedadVenta.habitaciones} Habitaciones |
+                  <i class="fas fa-bed"></i> ${
+                    propiedadVenta.habitaciones
+                  } Habitaciones |
                   <i class="fas fa-bath"></i> ${propiedadVenta.banos} Baños
                 </p>
-                <p><i class="fas fa-dollar-sign"></i> ${propiedadVenta.costo}</p>
-                <p class="text-danger">
+                <p><i class="fas fa-dollar-sign"></i> ${
+                  propiedadVenta.costo
+                }</p>
+                ${
+                  propiedadVenta.smoke
+                    ? `<p class="text-success">
+                  <i class="fas fa-smoking"></i> Permitido fumar
+                </p>`
+                    : `<p class="text-danger">
                   <i class="fas fa-smoking-ban"></i> No se permite fumar
-                </p>
-                <p class="text-danger">
+                </p>`
+                }
+                ${
+                  propiedadVenta.pets
+                    ? `<p class="text-success">
+                  <i class="fas fa-paw"></i> Mascotas permitidas
+                </p>`
+                    : `<p class="text-danger">
                   <i class="fa-solid fa-ban"></i> No se permiten mascotas
-                </p>
+                </p>`
+                }
+                
               </div>
     `;
   tarjetasVenta.innerHTML += plantilla;
