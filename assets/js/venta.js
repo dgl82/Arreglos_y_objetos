@@ -53,6 +53,8 @@ const propiedadesVenta = [
 // AGREGANDO PLANTILLA TARJETA PROPIEDADES //
 
 const tarjetasVenta = document.querySelector(".row");
+const vacio = document.querySelector("#alquiler");
+vacio.innerHTML = "";
 for (let propiedadVenta of propiedadesVenta) {
   const plantilla = `
     <div class="col-md-4 mb-4">
