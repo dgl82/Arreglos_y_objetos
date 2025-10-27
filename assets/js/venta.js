@@ -1,6 +1,6 @@
-//OBJETOS DE PROPIEDADES//
+//ARREGLO DE OBJETOS DE PROPIEDADES EN VENTA//
 
-const propiedades_venta = [
+const propiedadesVenta = [
   {
     nombre: "Apartamento de lujo en zona exclusiva",
     src: "https://fotos.perfil.com/2018/09/21/trim/950/534/nueva-york-09212018-366965.jpg",
@@ -49,3 +49,41 @@ const propiedades_venta = [
     pets: true,
   },
 ];
+
+// AGREGANDO PLANTILLA TARJETA PROPIEDADES //
+
+const tarjetasVenta = document.querySelector(".row");
+for (let propiedadVenta of propiedadesVenta) {
+  const plantilla = `
+    <div class="col-md-4 mb-4">
+            <div class="card">
+              <img
+                src="${propiedadVenta.src}"
+                class="card-img-top"
+                alt="Imagen del departamento"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  ${propiedadVenta.nombre}
+                </h5>
+                <p class="card-text">
+                  ${propiedadVenta.descripcion}
+                </p>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> ${propiedadVenta.ubicacion}
+                </p>
+                <p>
+                  <i class="fas fa-bed"></i> ${propiedadVenta.habitaciones} Habitaciones |
+                  <i class="fas fa-bath"></i> ${propiedadVenta.banos} Baños
+                </p>
+                <p><i class="fas fa-dollar-sign"></i> ${propiedadVenta.costo}</p>
+                <p class="text-danger">
+                  <i class="fas fa-smoking-ban"></i> No se permite fumar
+                </p>
+                <p class="text-danger">
+                  <i class="fa-solid fa-ban"></i> No se permiten mascotas
+                </p>
+              </div>
+    `;
+  tarjetasVenta.innerHTML += plantilla;
+}
