@@ -52,7 +52,7 @@ const propiedadesVenta = [
 
 // AGREGANDO PLANTILLA TARJETA PROPIEDADES //
 
-const tarjetasVenta = document.querySelector(".row");
+const tarjetasVenta = document.querySelector("#propiedadesVenta");
 const vacio = document.querySelector("#alquiler");
 vacio.innerHTML = "";
 for (let propiedadVenta of propiedadesVenta) {
